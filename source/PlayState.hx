@@ -2230,11 +2230,6 @@ class PlayState extends MusicBeatState
 		} else {
 			scoreTxt.text = 'Score: ' + songScore + ' | Misses: ' + songMisses + ' | Rating: ' + ratingName + ' (' + Highscore.floorDecimal(ratingPercent * 100, 2) + '%)' + ' - ' + ratingFC;//peeps wanted no integer rating
 		}
-		if(cpuControlled) {
-			scoreTxt.text = 'BOTPLAY';
-		}
-		if(practiceMode) {
-			scoreTxt.text = 'Misses: ' + songMisses + ' | Practice Mode ';
 
 		if(botplayTxt.visible) {
 			botplaySine += 180 * elapsed;
@@ -2602,7 +2597,7 @@ class PlayState extends MusicBeatState
 		#end
 	}
 
-	public var isDead:Bool = false; } //Don't mess with this on Lua!!!
+	public var isDead:Bool = false; //Don't mess with this on Lua!!!
 	function doDeathCheck(?skipHealthCheck:Bool = false) {
 		if (((skipHealthCheck && instakillOnMiss) || health <= 0) && !practiceMode && !isDead)
 		{
